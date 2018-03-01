@@ -1,0 +1,17 @@
+---
+- hosts: webservers
+  remote_user: ec2-user
+  tasks: 
+    - name: Fetch repo
+      command: chdir={{ folder_name }} git fetch origin master 
+      become: yes
+    - name: Reset repo
+      command: chdir={{ folder_name }} git reset --hard FETCH_HEAD
+      become: yes
+    - name: Clean repo
+      command: chdir={{ folder_name }} git clean -df
+      become: yes
+    - name: execute docker
+      command: chdir={{ folder_name }} docker-compose up --build -d
+    - import_tasks: task/update_all_inventories.yaml
+

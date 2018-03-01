@@ -1,0 +1,12 @@
+- name: create directory for file
+  local_action: file path=../inventoryFile/{{ folder_name }} state=directory
+- name: Test the port 1350
+  get_url:
+    url: http://localhost:1350
+    dest: ./inventory.yaml
+    mode: 0440
+- name:
+  fetch:
+    src: inventory.yaml
+    dest: ../inventoryFile/{{ folder_name }}/
+    flat: yes

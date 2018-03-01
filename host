@@ -1,0 +1,9 @@
+[webservers]
+ec2-18-219-57-44.us-east-2.compute.amazonaws.com folder_name=catvsdog-result
+ec2-18-219-60-43.us-east-2.compute.amazonaws.com folder_name=catvsdog-vote
+ec2-18-219-4-201.us-east-2.compute.amazonaws.com folder_name=catvsdog-resultApp
+ec2-18-217-144-129.us-east-2.compute.amazonaws.com folder_name=catvsdog-emberApp
+
+[observability]
+ec2-18-219-221-110.us-east-2.compute.amazonaws.com
+

@@ -1,0 +1,24 @@
+---
+- hosts: all
+  remote_user: ec2-user
+  tasks: 
+    - name: check connection
+      ping:
+    - name: update yum version
+      become: yes
+      command: yum update -y
+    - name: install docker
+      become: yes
+      command: yum install -y docker
+    - name: start docker
+      become: yes
+      command: service docker start
+    - name: start docker
+      become: yes
+      command: service docker start
+    - name: Add the ec2-user
+      become: yes
+      command: usermod -a -G docker ec2-user
+
+
+
